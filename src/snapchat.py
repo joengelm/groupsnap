@@ -20,8 +20,8 @@ class Snapchat(object):
     STATIC_TOKEN =          'm198sOkJEn37DjqZ32lpRu76xmw288xSQ9'        # API Static Token
     BLOB_ENCRYPTION_KEY =   'M02cnQ51Ji97vwT4'                          # Blob Encryption Key
     HASH_PATTERN =          '0001110111101110001111010101111011010001001110011000110001000110'; # Hash pattern
-    USERAGENT =             'Snapchat/6.0.0 (iPhone; iOS 7.0.2; gzip)'  # The default useragent
-    SNAPCHAT_VERSION =      '4.0.0'                                     # Snapchat Application Version
+    USERAGENT =             'Snapchat/7.1.0 (iPhone; iOS 8.1.0; gzip)'  # The default useragent
+    SNAPCHAT_VERSION =      '7.1.0'                                     # Snapchat Application Version
 
     MEDIA_IMAGE =                        0  # Media: Image
     MEDIA_VIDEO =                        1  # Media: Video

@@ -7,7 +7,8 @@ import sys
 username = ""
 path = ""
 
-def run(password, post_count):
+def run(password, init_post_count):
+	post_count = init_post_count
 	s = Snapchat()
 	s.login(username, password)
 	if not s.logged_in:
@@ -19,6 +20,7 @@ def run(password, post_count):
 			download(s, snap)
 		s.clear_feed()
 		for filename in os.listdir(path):
+			print "Processing: ", filename
 			media_type = 0
 			extension = filename.split('.')[-1]
 			if extension == "mp4":
@@ -28,10 +30,15 @@ def run(password, post_count):
 			else:
 				continue
 			media_id = s.upload(media_type, path + filename)
-			s.add_story(media_id, media_type, "Post #" + str(post_count), int(filename.split("+")[0]))
+			time = 10
+			try:
+				time = int(filename.split('+')[0])
+			except ValueError:
+				time = 10
+			s.add_story(media_id, media_type, "Post #" + str(post_count), time)
 			os.remove(path + filename)
 			post_count += 1
-		sleep(30)
+		sleep(300)
 		s.login(username, password)
 	
 def download(s, snap):
