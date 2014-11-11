@@ -3,6 +3,12 @@ GroupSnap (for Python!)
 
 This project is a variation of my original GroupSnap project in Java. In short, this program will allow you to create groups in Snapchat. Any snaps received by the GroupSnap account will be automatically reposted onto the account's story.
 
+Prerequisites:
+--------------
+1. This program should preferably be run on an always-on computer. 
+2. Use 'pip' to install the 'requests' module.
+3. Also, install the 'pycrypto' module.
+
 How to Set Up a GroupSnap Account:
 ----------------------------------
 1. Create a new Snapchat account for your group with a memorable username.
