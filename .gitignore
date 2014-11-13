@@ -11,6 +11,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.lnk
+*.bat
 
 # Media #
 #########
@@ -20,3 +22,7 @@ Thumbs.db
 *.mpeg
 *.mp4
 *.gif
+
+# Logs #
+########
+gs.log
