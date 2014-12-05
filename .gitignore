@@ -26,3 +26,7 @@ Thumbs.db
 # Logs #
 ########
 gs.log
+
+# Credentials #
+###############
+creds.txt

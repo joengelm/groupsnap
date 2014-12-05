@@ -1,4 +1,5 @@
 from snapchat import *
+import argparse
 from time import sleep
 import getpass, os, sys
 import logging
@@ -71,13 +72,24 @@ def download(s, snap):
     return True
 
 if __name__ == '__main__':
-	username = raw_input("Username: ")
+        parser = argparse.ArgumentParser()
+        parser.add_argument("-l")
+        args = parser.parse_args()
+        if args.l is not None and os.path.exists(args.l):
+            creds = open(args.l)
+            username = creds.readline().strip()
+            password = creds.readline().strip()
+        else:
+            username = raw_input("Username: ")
+            password = getpass.getpass('Password: ')
 	path = "../" + username + "/"
-	password = getpass.getpass('Password: ')
+        if not os.path.exists(path):
+            os.makedirs(path)
 	post_count = 0
-	if len(sys.argv) > 1:
-		try:
-			post_count = int(sys.argv[1])
-		except ValueError:
-			post_count = 1
+        # Allow reading credentials from a file.
+	# if len(sys.argv) > 1:
+	# 	try:
+	# 		post_count = int(sys.argv[1])
+	# 	except ValueError:
+	# 		post_count = 1
 	run(password, post_count)
